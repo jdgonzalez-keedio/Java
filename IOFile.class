@@ -1,0 +1,61 @@
+//
+// Create to J.David González "jdgonzalez@keedio.com"
+//
+
+package org.keedio;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class ProcessFile {
+    public ProcessFile() {
+    }
+
+    public static FileReader openReaderFile(String path) throws IOException {
+        FileReader fReader = new FileReader(path);
+        return fReader;
+    }
+
+    public static BufferedReader createBufferdReaderFile(FileReader fReader) throws IOException {
+        BufferedReader bReader = new BufferedReader(fReader);
+        return bReader;
+    }
+
+    public static void closeReaderFile(FileReader fReader) throws IOException {
+        fReader.close();
+    }
+
+    public static String readReaderFile(BufferedReader bReader) throws IOException {
+        return bReader.readLine();
+    }
+
+    public static FileWriter openWriteFile(String path) throws IOException {
+        FileWriter fWriter = new FileWriter(path, true);
+        return fWriter;
+    }
+
+    public static BufferedWriter createBufferdWriteFile(FileWriter fWriter) throws IOException {
+        BufferedWriter bReader = new BufferedWriter(fWriter);
+        return bReader;
+    }
+
+    public static void closeWriteFile(FileWriter fWriter) throws IOException {
+        fWriter.close();
+    }
+
+    public static void writeWriterFile(BufferedWriter bWriter, String outline) throws IOException {
+        bWriter.write(outline);
+    }
+
+    public static void writeWriterFile(FileWriter fWriter, String outline) throws IOException {
+        fWriter.write(outline);
+        fWriter.write("\n");
+    }
+
+    public static boolean endFile(String inline) throws IOException {
+        return inline != null;
+    }
+}
