@@ -1,0 +1,60 @@
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by J.David González "jdgonzalez@keedio.com" on 12/5/15.
+ */
+public class MapTest {
+
+    public static void main(String[] args) {
+
+        /*  Map no es una "collection"
+            conjunto inicial: set -> key
+            conjunto final: collection -> value
+
+         */
+
+        // Z_2
+        String key[] = {"zero", "one", "two", "three"};
+        Integer value[] = {0, 1, 2};
+        Map<String, Integer> m = new HashMap<String, Integer>();
+
+        //removes all of the mapping from the map
+        m.clear();
+
+        //returns "true" if this map contains a mapping for the specified key
+        if (m.containsKey("m")) System.out.println("Contain key");
+
+        //returns "true" if this map contains a mapping for the specified value
+        if (m.containsKey(key[0])) System.out.println("Contain value");
+
+        //return the value to which the specified key is mappped, or "null" if this map contains no mapping for the key
+        Integer value_aux = m.get(key[0]);
+        System.out.println("The value is " + value_aux);
+
+        //returns "true" if this map contains no key-value mapping
+        if(m.isEmpty()) System.out.println("No key-value mapping");
+
+        //returns a Set view of the keys contained in this map
+        System.out.println("The keys are " + m.keySet());
+
+        //associates the specified value with this specified key in this map
+        int j;
+        for (int i=0; i<key.length; i++) {
+            j = i % 3;
+            m.put(key[i], value[j]);
+        }
+        System.out.println("Mapping: " + m.keySet() + " --> " + m.values());
+
+        //return the number of value-value mappings in this map
+        System.out.println("Size " + m.size());
+
+        //removes the mapping for a key from this map if this is present
+        m.remove("two");
+        System.out.println("The keys are " + m.keySet());
+        System.out.println("The keys are " + m.values());
+        System.out.println("Size " + m.size());
+
+    }
+
+}
